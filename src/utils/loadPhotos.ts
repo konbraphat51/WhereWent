@@ -16,7 +16,7 @@ async function loadOnePhoto(file: File): Promise<PhotoPoint> {
     id: `${file.name}-${file.lastModified}-${crypto.randomUUID()}`,
     fileName: file.name,
     position,
-    takenAt,
+    takenAt: takenAt ?? new Date(file.lastModified),
     previewUrl,
   }
 }
