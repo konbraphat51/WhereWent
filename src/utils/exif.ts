@@ -19,10 +19,12 @@ export interface ExtractedExif {
 const READ_ENTIRE_FILE_CHUNK_SIZE = 200 * 1024 * 1024
 
 export async function extractExif(file: File): Promise<ExtractedExif> {
+  // `latitude`/`longitude` are values exifr computes from the raw GPS tags, not
+  // tags themselves — filtering the output with `pick` skips that computation
+  // and silently drops them, so the full merged output is read here instead.
   const data = await exifr.parse(file, {
     firstChunkSize: READ_ENTIRE_FILE_CHUNK_SIZE,
     gps: true,
-    pick: ['latitude', 'longitude', 'GPSAltitude', 'DateTimeOriginal', 'CreateDate', 'ModifyDate'],
   })
 
   if (!data || typeof data.latitude !== 'number' || typeof data.longitude !== 'number') {
