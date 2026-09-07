@@ -1,47 +1,47 @@
 # WhereWent
 
-複数の写真のEXIF（位置情報・撮影時刻）から、移動の軌跡を地図上にプロットするWebアプリです。
+A web app that plots the route you traveled on a map, using the GPS location and capture time embedded in your photos' EXIF data.
 
-## 特徴
+## Features
 
-- 写真をドラッグ＆ドロップ、またはファイル選択でアップロード
-- PNG / JPEG / HEIC / HEIF に対応（HEICはブラウザ表示用に自動変換）
-- GPS座標と撮影時刻をEXIFから抽出し、時系列で地図上に軌跡（ポリライン）を描画
-- 下部のタイムラインから写真をクリックすると、地図・ポップアップが連動
-- 総移動距離・撮影期間などの統計を表示
-- 位置情報や日時が取得できない写真はエラー理由付きで一覧表示
+- Upload photos via drag-and-drop or a file picker
+- Supports PNG / JPEG / HEIC / HEIF (HEIC is automatically converted for browser display)
+- Extracts GPS coordinates and capture time from EXIF, then draws a chronological track (polyline) on the map
+- Clicking a photo in the timeline at the bottom syncs the map and its popup
+- Shows stats such as total distance traveled and the date range covered
+- Photos missing location or timestamp data are listed with the reason they were skipped
 
-## 技術スタック
+## Tech stack
 
 - React 19 + TypeScript
 - Vite
-- react-leaflet / Leaflet（地図）
-- exifr（EXIF解析）
-- heic2any（HEIC→JPEG変換）
-- zustand（状態管理）
+- react-leaflet / Leaflet (map)
+- exifr (EXIF parsing)
+- heic2any (HEIC → JPEG conversion)
+- zustand (state management)
 - pnpm
 
-## セットアップ
+## Setup
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-## ビルド
+## Build
 
 ```bash
-pnpm build          # 通常ビルド
-pnpm build:github   # GitHub Pages用ビルド（/WhereWent/ をベースパスに設定）
+pnpm build          # standard build
+pnpm build:github   # GitHub Pages build (sets /WhereWent/ as the base path)
 ```
 
-## GitHub Pagesへのデプロイ
+## Deploying to GitHub Pages
 
-`main` ブランチへのpushで `.github/workflows/deploy.yml` が自動的に `pnpm run build:github` を実行し、GitHub Pagesへデプロイします。
+Pushing to the `main` branch triggers `.github/workflows/deploy.yml`, which runs `pnpm run build:github` and deploys to GitHub Pages automatically.
 
-リポジトリの Settings → Pages → Source を **GitHub Actions** に設定してください。
+In the repository, set Settings → Pages → Source to **GitHub Actions**.
 
-手動でデプロイする場合:
+To deploy manually instead:
 
 ```bash
 pnpm run build:github
