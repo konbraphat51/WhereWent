@@ -37,7 +37,7 @@ export async function loadPhotos(
       } catch (error) {
         rejected.push({
           fileName: file.name,
-          reason: error instanceof Error ? error.message : '読み込みに失敗しました',
+          reason: error instanceof Error ? error.message : 'Failed to load',
         })
       } finally {
         done += 1

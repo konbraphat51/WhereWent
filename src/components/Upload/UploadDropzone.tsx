@@ -52,8 +52,8 @@ export function UploadDropzone({ onFilesSelected, disabled }: UploadDropzoneProp
         }}
       />
       <span className="dropzone__icon">📍</span>
-      <p className="dropzone__title">写真をドラッグ＆ドロップ</p>
-      <p className="dropzone__subtitle">またはクリックして選択（PNG / JPG / HEIC）</p>
+      <p className="dropzone__title">Drag & drop photos here</p>
+      <p className="dropzone__subtitle">or click to choose files (PNG / JPG / HEIC)</p>
     </div>
   )
 }

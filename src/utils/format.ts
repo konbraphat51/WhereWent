@@ -1,4 +1,4 @@
-const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', {
+const dateTimeFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
@@ -6,7 +6,7 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', {
   minute: '2-digit',
 })
 
-const timeFormatter = new Intl.DateTimeFormat('ja-JP', {
+const timeFormatter = new Intl.DateTimeFormat('en-US', {
   hour: '2-digit',
   minute: '2-digit',
 })

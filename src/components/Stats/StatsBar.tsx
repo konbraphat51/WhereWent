@@ -19,11 +19,11 @@ export function StatsBar({ photos }: StatsBarProps) {
     <div className="stats-bar">
       <div className="stats-bar__item">
         <span className="stats-bar__value">{photos.length}</span>
-        <span className="stats-bar__label">枚の写真</span>
+        <span className="stats-bar__label">photos</span>
       </div>
       <div className="stats-bar__item">
         <span className="stats-bar__value">{formatDistanceKm(distanceKm)}</span>
-        <span className="stats-bar__label">移動距離</span>
+        <span className="stats-bar__label">traveled</span>
       </div>
       <div className="stats-bar__item stats-bar__item--range">
         <span className="stats-bar__label">{formatDateTime(first.takenAt)}</span>

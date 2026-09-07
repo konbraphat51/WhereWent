@@ -13,7 +13,7 @@ export function ProcessingIndicator({ done, total }: ProcessingIndicatorProps) {
         <div className="processing__bar-fill" style={{ width: `${percent}%` }} />
       </div>
       <span className="processing__label">
-        写真を解析中… {done} / {total}
+        Analyzing photos… {done} / {total}
       </span>
     </div>
   )

@@ -12,7 +12,7 @@ export function RejectedList({ rejected }: RejectedListProps) {
   return (
     <div className="rejected-list">
       <button type="button" className="rejected-list__toggle" onClick={() => setIsOpen((v) => !v)}>
-        ⚠️ {rejected.length} 件の写真を読み込めませんでした {isOpen ? '▲' : '▼'}
+        ⚠️ {rejected.length} photo{rejected.length === 1 ? '' : 's'} could not be loaded {isOpen ? '▲' : '▼'}
       </button>
       {isOpen && (
         <ul className="rejected-list__items">

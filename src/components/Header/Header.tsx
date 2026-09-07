@@ -12,7 +12,7 @@ export function Header({ hasPhotos, onClear }: HeaderProps) {
       </div>
       {hasPhotos && (
         <button type="button" className="app-header__clear" onClick={onClear}>
-          クリア
+          Clear
         </button>
       )}
     </header>
